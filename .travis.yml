@@ -8,13 +8,13 @@ before_install:
     - wget "https://storage.googleapis.com/shellcheck/shellcheck-${scversion}.linux.x86_64.tar.xz"
     - tar --xz -xvf shellcheck-"${scversion}".linux.x86_64.tar.xz
     - sudo cp shellcheck-"${scversion}"/shellcheck /usr/bin/
-    - shellcheck --version
+    - /usr/bin/shellcheck --version
 
 script:
   - bash test.sh
 
 after_script:
-  - shellcheck test.sh
+  - /usr/bin/shellcheck test.sh
 
 after_failure:
   - id
